@@ -7,6 +7,13 @@ public class Vehicle {
 	private String make;
 	private VehicleType type;
 	
+	public Vehicle(Builder builder) {
+		this.make = builder.make;
+		this.type = builder.type;
+		this.year = builder.year;
+		this.plate = builder.plate;
+		this.vin = builder.vin;
+	}
 	public String getPlate() {
 		return plate;
 	}
@@ -71,12 +78,37 @@ public class Vehicle {
 	@Override
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
-		sb.append("Vin:").append(getVin()).append(", ")
+		sb.append("Vin:").append(getVin()).append(",")
 		.append("Make:").append(getMake()).append(",")
 		.append("Year:").append(getYear()).append(",")
 		.append("Type:").append(getType());
 		return sb.toString();
 	}
-	
+	public static class Builder {
+		private int year;
+		private String make;
+		private VehicleType type;
+		
+		private String plate;
+		private String vin;
+		
+		public Builder(String make, VehicleType type, int year) {
+			this.year = year;
+			this.make = make;
+			this.type = type;
+		}
+		
+		public Builder plate(String val) {
+			this.plate = val;
+			return this;
+		}
+		public Builder vin(String val) {
+			this.vin = val;
+			return this;
+		}
+		public Vehicle build() {
+			return new Vehicle(this);
+		}
+	}
 	
 }

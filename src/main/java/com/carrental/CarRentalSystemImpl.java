@@ -3,17 +3,21 @@ package com.carrental;
 import com.carrental.exception.NotEnoughInventoryException;
 import com.carrental.model.Customer;
 import com.carrental.model.Reservation;
+import com.carrental.model.Vehicle;
+import com.carrental.service.CarInventoryService;
 import com.carrental.service.NotificationService;
 import com.carrental.service.ReservationService;
 
 public class CarRentalSystemImpl implements CarRentalSystem {
-	
+ 	
+//	private CarInventoryService carInventoryServ;
 	private NotificationService notificationServ;
 	private ReservationService reservationServ;
 	public CarRentalSystemImpl(NotificationService notificationServ, ReservationService reservationServ) {
 		super();
 		this.notificationServ = notificationServ;
 		this.reservationServ = reservationServ;
+//		this.carInventoryServ = carInventoryServ;
 	}
 
 	@Override
@@ -30,5 +34,11 @@ public class CarRentalSystemImpl implements CarRentalSystem {
 			throw e;
 		}
 	}
+//
+//	@Override
+//	public void updateInventory(Vehicle vehicle, int quantity) {
+//		
+//		carInventoryServ.updateInventory(vehicle, quantity);;
+//	}
 
 }

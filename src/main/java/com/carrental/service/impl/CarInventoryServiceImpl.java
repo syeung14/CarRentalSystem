@@ -40,5 +40,11 @@ public class CarInventoryServiceImpl implements CarInventoryService {
 		}
 		return false;
 	}
+
+	@Override
+	public int getInventory(Vehicle vehicle) {
+		return inventoryList.get(vehicle);
+		
+	}
 	
 }
