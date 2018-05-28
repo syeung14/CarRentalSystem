@@ -71,8 +71,13 @@ public class Reservation {
 		this.quantity = quantity;
 	}
 
-	public int getReservedDay() {
-		return Period.between(this.startDate, endDate).getDays();
+	/**
+	 * Both start date and end date are inclusive
+	 * 
+	 * @return  number of days reserved
+	 */
+	public int getReservationDays() {
+		return Period.between(this.startDate, endDate).getDays() + 1;
 	}
 	
 	public boolean isWithIn(LocalDate reservationDate) {

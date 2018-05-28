@@ -1,15 +1,18 @@
 package com.carrental;
 
-import com.carrental.model.Customer;
 import com.carrental.model.Reservation;
-import com.carrental.model.Vehicle;
 
 /**
+ * Central class drives the entire Vehicle reservation process
+ *   Reserve a Vehicle
+ *   Cancel the reservation.
+ *   send notification to customers
  * 
  * @author sangsinyeung
  */
 public interface CarRentalSystem {
 	
-//	public void updateInventory(Vehicle vehicle, int quantity);
-	public void makeReservation(Customer customer, Reservation reservation);
+	public void makeReservation(Reservation reservation);
+	public boolean checkReservation(Reservation reservation);
+	public void cancellationReservation(Reservation reservation);
 }

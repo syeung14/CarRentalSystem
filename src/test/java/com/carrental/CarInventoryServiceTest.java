@@ -26,14 +26,14 @@ public class CarInventoryServiceTest {
 
 	@Test
 	public void testCarInventoryCreation() {
-		carInvServ.updateInventory(vehicle[0], 3);
+		carInvServ.addToInventory(vehicle[0], 3);
 		int inventory = carInvServ.getInventory(vehicle[0]);
 		assertEquals(3, inventory);
 	}
 	@Test
 	public void testCarInventoryReduction() {
-		carInvServ.updateInventory(vehicle[1], 3);
-		carInvServ.updateInventory(vehicle[1], -1);
+		carInvServ.addToInventory(vehicle[1], 3);
+		carInvServ.addToInventory(vehicle[1], -1);
 		int inventory = carInvServ.getInventory(vehicle[1]);
 		assertEquals(2, inventory);
 	}
@@ -43,7 +43,7 @@ public class CarInventoryServiceTest {
 		boolean isEnough = carInvServ.isEnoughInventory(vehicle[1], 1);
 		assertEquals(false, isEnough);
 
-		carInvServ.updateInventory(vehicle[1], 1);
+		carInvServ.addToInventory(vehicle[1], 1);
 		isEnough = carInvServ.isEnoughInventory(vehicle[1], 1);
 		assertEquals(true, isEnough);
 	}

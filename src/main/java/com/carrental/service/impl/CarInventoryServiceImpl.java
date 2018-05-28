@@ -22,7 +22,7 @@ public class CarInventoryServiceImpl implements CarInventoryService {
 		this.inventoryList = inventoryList;
 	}
 	@Override
-	public void updateInventory(Vehicle vehicle, int quantity) {
+	public void addToInventory(Vehicle vehicle, int quantity) {
 		if (inventoryList.containsKey(vehicle)) {
 			quantity = quantity + inventoryList.get(vehicle);
 		}
