@@ -3,7 +3,7 @@ package com.carrental;
 import org.junit.Before;
 import org.junit.Test;
 
-public class CarRentalSystemServiceTest {
+public class CarRentalSystemTest {
 
 	@Before
 	public void setUp() {
